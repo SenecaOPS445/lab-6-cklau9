@@ -23,14 +23,8 @@ class Student:
             return 'GPA of student ' + self.name + ' is ' + '0.0'
         
         gpa = 0.0
-        count_not_zero = 0 # Initial a counter which check if grade other than 0.0
         for course in self.courses.keys():
             gpa = gpa + self.courses[course]
-            if self.courses[course] != 0.0:
-                count_not_zero = count_not_zero + 1
-        if count_not_zero == 0: # Solve 2nd problem that the grades added are 0.0 floats as the counter not running
-            return 'GPA of student ' + self.name + ' is ' + '0.0'
-        
         return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
 
     # Return a list of course that the student passed (not a 0.0 grade)
